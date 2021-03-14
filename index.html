@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Math Game</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./application.js"></script>
+    <link href="./custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2>10 Sec Maths Game</h2>
+          <div class="range-control">
+              <input type="range" id="inputRange" min="0" max="100" value="200" class="my-2">
+              <output name="rangeVal">50</output>
+          </div>
+          <button type="button" class="plus btn btn-info mx-1 my-2">+</button>
+          <button type="button" class="minus btn btn-info mx-1 my-2">-</button>
+          <button type="button" class="multiply btn btn-info mx-1 my-2">*</button>
+          <button type="button" class="divide btn btn-info mx-1 my-2">/</button>
+          <!-- Add the following h3 and p -->
+          <h3 id="time-left"></h3>
+          <p>second left</p>
+
+          <h1 id="equation"></h1>
+          <input id="user-input" type="number"/>
+          <div id="score"></div>
+          
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
