@@ -3,6 +3,7 @@ $(document).ready(function(){
   var timeLeft = 10;
   var score = 0;
   var interval;
+  var rangeValue;
 
   var randomNumberGenerator = function (size) {
     return Math.ceil(Math.random() * size);
@@ -10,28 +11,28 @@ $(document).ready(function(){
 
   var questionGenerator = function () {
     var question = {};
-    var num1 = randomNumberGenerator(10);
-    var num2 = randomNumberGenerator(10);
+    var num1 = randomNumberGenerator(rangeValue);
+    var num2 = randomNumberGenerator(rangeValue);
 
-    if($(".plus").prop('checked')){
+    $(".plus").click(function(){
       question.answer = num1 + num2;
       question.equation = String(num1) + " + " + String(num2);
-    }
+    });
 
-    if($(".minus").prop('checked')){
+    $(".minus").click(function(){
       question.answer = num1 - num2;
       question.equation = String(num1) + " - " + String(num2);
-    }
+    });
 
-    if($(".multiply").prop('checked')){
+    $(".multiply").click(function(){
       question.answer = num1 * num2;
       question.equation = String(num1) + " * " + String(num2);
-    }
+    });
 
-    if($(".divide").prop('checked')){
+    $(".divide").click(function(){
       question.answer = num1 / num2;
       question.equation = String(num1) + " / " + String(num2);
-    }
+    });
 
 
 
@@ -99,7 +100,7 @@ $(document).ready(function(){
       var range = controlMax - controlMin
 
       var position = ((controlVal-controlMin)/range)*100;
-      var postitionOffset = Math.round(contorlThumbWidth*position/100)-(controlTHumbWidth/2)；
+      var positionOffset = Math.round(controlThumbWidth*position/100)-(controlThumbWidth/2);
       var output = control.next('output');
       output.css('left', 'calc(' + position + '% - ' + positionOffset + 'px)').text(controlVal);
     });
