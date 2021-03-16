@@ -59,13 +59,14 @@ $(document).ready(function(){
       renderNewQuestion();
       $('#user-input').val('');
       updateTimeLeft(+1);
+      updateScre(+1);
 
     }
   }
 
   var updateScre = function(amount){
     score += amount;
-    document.getElementById("score").innerHTML = score;
+    $('#score').text(score);
   };
 
   $('#user-input').on('keyup', function(){
@@ -78,6 +79,7 @@ $(document).ready(function(){
     if(!interval){
       interval = setInterval(function(){
         updateTimeLeft(-1);
+        UpdateScre(-1);
         if (timeLeft === 0){
           clearInterval(interval);
           interval = undefined;
@@ -104,9 +106,9 @@ $(document).ready(function(){
         // controlMax = control.attr('max'),
         controlVal = control.val(),
         // controlThumbWidth = control.data('thumbwidth');
-    
+
     rangeValue = controlVal;
-    
+
     // var range = controlMax - controlMin;
 
     // var position = ((controlVal-controlMin)/range)*100;
