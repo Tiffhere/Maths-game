@@ -3,6 +3,9 @@ h2 {
   font-size: 2rem;
 }
 
+#questionType {
+  text-transform: uppercase;
+}
 
 .container {
   height: 40vw;
