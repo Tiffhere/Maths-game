@@ -66,7 +66,7 @@ $(document).ready(function(){
 
   var updateScre = function(amount){
     score += amount;
-    $('#score').text(score);
+    $('#score').text("Score: " + score);
   };
 
   $('#user-input').on('keyup', function(){
@@ -77,10 +77,13 @@ $(document).ready(function(){
 
   var startGame = function(){
     if(!interval){
-      interval = setInterval(function(){
+      if (timeLeft === 0) {
+        updateTimeLeft(10);
+        updateScore(-score);
+      }
+      interval = setInterval(function () {
         updateTimeLeft(-1);
-        UpdateScre(-1);
-        if (timeLeft === 0){
+        if (timeLeft === 0) {
           clearInterval(interval);
           interval = undefined;
         }
@@ -102,22 +105,10 @@ $(document).ready(function(){
 
   $('#inputRange').on('change', function() {
     var control = $(this),
-        // controlMin = control.attr('min'),
-        // controlMax = control.attr('max'),
         controlVal = control.val(),
-        // controlThumbWidth = control.data('thumbwidth');
+        rangeValue = controlVal;
 
-    rangeValue = controlVal;
-
-    // var range = controlMax - controlMin;
-
-    // var position = ((controlVal-controlMin)/range)*100;
-    // var positionOffset = Math.round(controlThumbWidth*position/100)-(controlThumbWidth/2);
     var output = $('#rangeVal');
     output.text(controlVal);
   });
-
-
-
-
 });
