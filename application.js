@@ -46,6 +46,7 @@ $(document).ready(function(){
   $('button.qType').on('click', function () {
     var newType = $(this).attr('name');
     selectedQuestionType = newType;
+    renderNewQuestion();
     $('#questionType').text(newType);
   })
 
