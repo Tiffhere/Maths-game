@@ -39,7 +39,6 @@ $(document).ready(function(){
         question.equation = String(num3) + " / " + String(num2);
         break;
     }
-
     return question;
   }
 
@@ -61,7 +60,6 @@ $(document).ready(function(){
       $('#user-input').val('');
       updateTimeLeft(+1);
       updateScre(+1);
-
     }
   }
 
