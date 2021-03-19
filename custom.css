@@ -7,7 +7,6 @@ h2 {
   font-size: 2rem;
 }
 
-
 #questionType {
   text-transform: uppercase;
 }
@@ -22,14 +21,4 @@ h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-@media screen and (max-width: 375px) {
-  .container {
-    height: 90vw;
-    width: 80vw;
-  }
-  h2, h3 {
-    font-size: 1rem;
-  }
 }
