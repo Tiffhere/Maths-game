@@ -103,9 +103,9 @@ $(document).ready(function(){
   }
 
   $('#inputRange').on('change', function() {
-    var control = $(this),
-        controlVal = control.val(),
-        rangeValue = controlVal;
+    var control = $(this);
+    var controlVal = control.val();
+        rangeValue = Number(controlVal);
 
     var output = $('#rangeVal');
     output.text(controlVal);
